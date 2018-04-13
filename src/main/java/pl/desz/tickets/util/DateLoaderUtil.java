@@ -15,7 +15,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- *
+ * Saves sample data on application startup in dev profile.
  */
 @Profile("dev")
 @Component

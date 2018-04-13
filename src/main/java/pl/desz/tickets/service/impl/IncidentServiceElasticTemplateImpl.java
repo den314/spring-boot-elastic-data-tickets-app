@@ -1,5 +1,6 @@
 package pl.desz.tickets.service.impl;
 
+import org.apache.commons.lang.NotImplementedException;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.springframework.context.annotation.Profile;
 import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
@@ -47,12 +48,12 @@ public class IncidentServiceElasticTemplateImpl implements ElasticService {
 
     @Override
     public Iterable<Incident> findAllByIds(Iterable<Long> incidentIds) {
-        return null;
+        throw new NotImplementedException();
     }
 
     @Override
     public Incident save(Incident i) {
-        return null;
+        throw new NotImplementedException();
     }
 
     @Override
@@ -75,11 +76,11 @@ public class IncidentServiceElasticTemplateImpl implements ElasticService {
 
     @Override
     public void delete(Long id) {
-
+        throw new NotImplementedException();
     }
 
     @Override
     public void delete(Incident i) {
-
+        throw new NotImplementedException();
     }
 }
