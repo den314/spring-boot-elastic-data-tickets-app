@@ -1,11 +1,18 @@
-package pl.desz.bootifulapp.model;
+package pl.desz.tickets.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+/**
+ * Person who watches given Incident.
+ */
 public class Watcher {
 
     private String firstName;
     private String lastName;
 
-    public Watcher(String firstName, String lastName) {
+    @JsonCreator
+    public Watcher(@JsonProperty("firstName") String firstName, @JsonProperty("lastName") String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
     }

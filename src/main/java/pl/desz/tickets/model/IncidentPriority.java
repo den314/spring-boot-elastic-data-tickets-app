@@ -1,5 +1,9 @@
-package pl.desz.bootifulapp.model;
+package pl.desz.tickets.model;
 
+/**
+ * Incident's priority. Each priority has
+ * given threshold of days to resolve it.
+ */
 public enum IncidentPriority {
 
     CRITICAL(1), MAJOR(3), MINOR(7);

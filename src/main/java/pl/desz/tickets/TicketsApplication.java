@@ -1,12 +1,12 @@
-package pl.desz.bootifulapp;
+package pl.desz.tickets;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BootifulAppApplication {
+public class TicketsApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(BootifulAppApplication.class, args);
+        SpringApplication.run(TicketsApplication.class, args);
     }
 }

@@ -1,11 +1,11 @@
-package pl.desz.bootifulapp.service.impl;
+package pl.desz.tickets.service.impl;
 
 import org.springframework.context.annotation.Profile;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
-import pl.desz.bootifulapp.model.Incident;
-import pl.desz.bootifulapp.repository.IncidentRepository;
-import pl.desz.bootifulapp.service.ElasticService;
+import pl.desz.tickets.model.Incident;
+import pl.desz.tickets.model.TicketStatus;
+import pl.desz.tickets.repository.IncidentRepository;
+import pl.desz.tickets.service.ElasticService;
 
 @Service
 @Profile("elastic-repository")
@@ -23,6 +23,11 @@ public class IncidentServiceElasticRepositoryImpl implements ElasticService {
     }
 
     @Override
+    public Iterable<Incident> findAllByStatus(TicketStatus status) {
+        return incidentRepository.findAllByStatus(status);
+    }
+
+    @Override
     public Iterable<Incident> findAllByIds(Iterable<Long> incidentIds) {
         return incidentRepository.findAllById(incidentIds);
     }
@@ -31,6 +36,13 @@ public class IncidentServiceElasticRepositoryImpl implements ElasticService {
     public Incident save(Incident i) {
         return incidentRepository.save(i);
     }
+
+    @Override
+    public Iterable<Incident> saveAll(Iterable<Incident> incidents) {
+        return incidentRepository.saveAll(incidents);
+    }
+
+
 
     @Override
     public void delete(Long id) {

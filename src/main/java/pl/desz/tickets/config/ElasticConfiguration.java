@@ -1,4 +1,4 @@
-package pl.desz.bootifulapp.config;
+package pl.desz.tickets.config;
 
 import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.common.transport.InetSocketTransportAddress;
@@ -17,9 +17,18 @@ public class ElasticConfiguration {
     @Value("${elasticsearch.host:localhost}")
     private String elasticHost;
 
+    /**
+     * Transport port of elastic server
+     */
     @Value("${elasticsearch.port:9300}")
     private int elasticPort;
 
+    /**
+     * Interacts with Elastic Server.
+     *
+     * @return elasticTemplate bean
+     * @throws UnknownHostException
+     */
     @Bean("elasticsearchTemplate")
     public ElasticsearchTemplate elasticTemplate() throws UnknownHostException {
         Settings settings = Settings.builder().put("cluster.name", "elasticsearch").build();
